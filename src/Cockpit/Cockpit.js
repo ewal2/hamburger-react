@@ -16,8 +16,7 @@ const cockpit = (props) => {
                <button 
                className={btnClass}
                onClick = {this.togglePersonsHandler}>Toggle Persons</button>
-           </div>
-          );  
-    };
+           </div>);
+           };
 
 export default cockpit;
