@@ -3,6 +3,8 @@ import classes from "./Cockpit.css";
 
 const cockpit = (props) => {
     const assignedClasses = [];
+    let btnClass = "";
+    btnClass = classes.Red;
     if (props.persons.length <= 2) {
         assignedClasses.push(classes.red); // classes = ["red"]
     }
