@@ -28,17 +28,14 @@ class App extends Component {
         return state;
     }
     
-  //switchNameHandler = (newName) => {
-//        this.setState({
-//            persons:[
-//               { name: newName, age: "32"},
-//                { name: "Aga", age: "25"},
-//                { name: "Bartosz", age: "55"},
-//                { name: "Miro", age: "20"}
-//        ]
-//        });
-//    }
-    
+    componentDidMount() {
+        console.log('[App.js] componentDidMount');
+    }
+
+
+
+
+
     nameChangedHandler = ( event, id ) => {
         const personIndex = this.state.persons.findIndex(p => {
             return p.id === id;
@@ -77,10 +74,13 @@ class App extends Component {
     let persons = null;
 
     if ( this.state.showPersons ) {
-        persons = <Persons 
+        persons = (
+            <Persons 
                  persons={this.state.persons}
                  clicked={this.deletePersonHandler}
-                 changed={this.nameChangedHandler} />;
+                 changed={this.nameChangedHandler}
+            />
+        );
     }
     
     
