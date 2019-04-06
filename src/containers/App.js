@@ -70,8 +70,7 @@ class App extends Component {
       // };
       
     let persons = null;
-    let btnClass = "";
-    
+
     if ( this.state.showPersons ) {
         persons = (
            <div>
@@ -81,7 +80,6 @@ class App extends Component {
                  changed={this.nameChangedHandler} />
             </div>
         );
-        btnClass = classes.Red;
         //style.backgroundColor = "red";
     }
     
