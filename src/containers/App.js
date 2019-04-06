@@ -21,7 +21,11 @@ class App extends Component {
         ],
         //otherState: "some other value",
         showPersons: false
-        
+    }
+    
+    static getDerivedStateFromProps(props, state) {
+        console.log('[App.js] getDerivedStateFromProps', props);
+        return state;
     }
     
   //switchNameHandler = (newName) => {
