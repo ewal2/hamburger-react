@@ -5,6 +5,13 @@ import Cockpit from '../components/Cockpit/Cockpit';
 
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        console.log('[App.js] constructor');
+        //this.state = also possbile to set state here
+    }
+    
+    
     state = {
         persons: [
             { id: "a123", name: "Ewa", age: "32"},
