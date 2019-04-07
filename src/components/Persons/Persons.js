@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import Person from "./Person/Person";
 
-class Persons extends Component {
+class Persons extends PureComponent {
       // there is no initial state, so it does not make any sense here
       // static getDerivedStateFromProps(props, state) {
       //   console.log('[Persons.js] getDerivedStateFromProps');
@@ -14,19 +14,19 @@ class Persons extends Component {
       
       
        
-       shouldComponentUpdate(nextProps, nextState) {
-         console.log('[Persons.js] shouldComponentUpdate');
-         if (
-             nextProps.persons !== this.props.persons || 
-             nextProps.changed !== this.props.changed || 
-             nextProps.clicked !== this.props.clicked
-             ) {
-             return true;
-         } else {
-             return false;
-         }
+       //shouldComponentUpdate(nextProps, nextState) {
+        // console.log('[Persons.js] shouldComponentUpdate');
+         //if (
+           //  nextProps.persons !== this.props.persons || 
+        //     nextProps.changed !== this.props.changed || 
+          //   nextProps.clicked !== this.props.clicked
+        //     ) {
+         //    return true;
+         //} else {
+          //   return false;
+         //}
         //return true;
-       }
+       //}
        
        getSnapshotBeforeUpdate(prevProps, prevState){
          console.log('[Persons.js] getSnapshotBeforeUpdate');
