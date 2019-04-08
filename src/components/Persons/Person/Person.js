@@ -15,6 +15,6 @@ class Person extends Component {
       </Aux>
     );
   }
-};
+}
 
 export default Person;
