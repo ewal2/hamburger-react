@@ -65,7 +65,7 @@ class App extends Component {
         
         persons[personIndex] = person;
         
-        this.setState( {persons: persons, changeCounter} );
+        this.setState( {persons: persons, changeCounter: this.state.changeCounter + 1} );
     }
     
     deletePersonHandler = (personIndex) => {
@@ -94,8 +94,8 @@ class App extends Component {
                  clicked={this.deletePersonHandler}
                  changed={this.nameChangedHandler}
             />
-        );
-    }
+        )
+    };
     
     
       
