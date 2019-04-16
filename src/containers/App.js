@@ -23,7 +23,9 @@ class App extends Component {
         otherState: "some other value",
         showPersons: false,
         showCockpit: true,
-        changeCounter: 0
+        changeCounter: 0,
+        authenticated: false
+        
     }
     
     static getDerivedStateFromProps(props, state) {
@@ -86,21 +88,25 @@ class App extends Component {
     }
     
    
+    loginHandler = () => {
+        this.setState({authenticated: true});
+    }
     
-  render() {
-    console.log('[App.js] render');
-      
-    let persons = null;
-
-    if ( this.state.showPersons ) {
-        persons = (
-            <Persons 
-                 persons={this.state.persons}
-                 clicked={this.deletePersonHandler}
-                 changed={this.nameChangedHandler}
-            />
-        )
-    };
+    render() {
+        console.log('[App.js] render');
+          
+        let persons = null;
+    
+        if ( this.state.showPersons ) {
+            persons = (
+                <Persons 
+                     persons={this.state.persons}
+                     clicked={this.deletePersonHandler}
+                     changed={this.nameChangedHandler}
+                     isAuthenticated={this.state.authenticated}
+                />
+            )
+     };
     
     
       
@@ -110,12 +116,13 @@ class App extends Component {
               }}
               >Remove Cockpit</button>
               { this.state.showCockpit ? (
-              <Cockpit
-                title={this.props.appTitle}
-                showPersons={this.state.showPersons}
-                personsLength={this.state.persons.length}
-                clicked={this.togglePersonsHandler} 
-                /> 
+                  <Cockpit
+                    title={this.props.appTitle}
+                    showPersons={this.state.showPersons}
+                    personsLength={this.state.persons.length}
+                    clicked={this.togglePersonsHandler} 
+                    login={this.loginHandler}
+                  /> 
                 ) : null}
               {persons}
           </Aux>
