@@ -52,7 +52,7 @@ const cockpit = ( props ) => {
                    onClick = {props.clicked}>Toggle Persons
                </button>
                <AuthContext.Consumer>
-                 <button onClick={props.login}>Log in</button>
+                 {(context) => <button onClick={context.login}>Log in</button>}
                </AuthContext.Consumer>
            </div>);
            };
