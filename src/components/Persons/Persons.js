@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import Person from "./Person/Person";
+import AuthContext from "../../context/auth-context";
 
 class Persons extends PureComponent {
       // there is no initial state, so it does not make any sense here
